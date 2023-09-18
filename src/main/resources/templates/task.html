@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Task manger</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Create task</h1>
+<form action="#" th:action="@{/task}" th:object="${task}" method="post">
+    <p>name       : <input type="text" th:field="*{taskName}" /></p>
+    <p>status desc: <input type="text" th:field="*{taskStatus}" /></p>
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
+
+<div>
+    <h1> List filter </h1>
+    <p><a href="/task/all">All tasks</a></p>
+    <p><a href="/task/all/complete">Completed</a></p>
+    <p><a href="/task/all/incomplete">Incomplete</a></p>
+</div>
+</body>
+</html>

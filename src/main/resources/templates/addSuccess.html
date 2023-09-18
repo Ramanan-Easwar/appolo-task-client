@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Task manager</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Successfully added the following task</h1>
+<p th:text="'name: ' + ${task.taskName}" />
+<p th:text="'status: ' + ${task.taskStatus}" />
+<a href="/task">Submit another task</a>
+<div>
+    <h1> List filter </h1>
+    <p><a href="/task/all">All tasks</a></p>
+    <p><a href="/task/all/complete">Completed</a></p>
+    <p><a href="/task/all/incomplete">Incomplete</a></p>
+</div>
+</body>
+</html>

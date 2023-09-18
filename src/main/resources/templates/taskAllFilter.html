@@ -1,0 +1,26 @@
+<table>
+    <thead>
+    <tr>
+        <th> Task </th>
+        <th> Status desc </th>
+        <th> Status </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${tasks.isEmpty()}">
+        <td colspan="2"> No tasks Available </td>
+    </tr>
+    <tr th:each="task : ${tasks}">
+        <td><span th:text="${task.taskName}"> Task name </span></td>
+        <td><span th:text="${task.taskStatus}"> Task description </span></td>
+        <td><a th:href="@{/task/{id}(id=${task.getTaskId()})}" th:text="${task.type}"> Task status </a></td>
+    </tr>
+    </tbody>
+</table>
+
+<div>
+    <h1> List filter </h1>
+    <p><a href="/task">Create new</a></p>
+    <p><a href="/task/all/complete">Completed</a></p>
+    <p><a href="/task/all/incomplete">Incomplete</a></p>
+</div>
