@@ -52,7 +52,6 @@ public class TaskServiceClient {
     }
 
     public String completeTask(Long taskId) {
-        System.out.println("inside complete task");
         HttpEntity<String> request = new HttpEntity<>("empty");
         return restTemplate.patchForObject(
                 Constants.SERVICE_URL + port + Constants.TASK + "/" + taskId + Constants.FINISH_TASK,

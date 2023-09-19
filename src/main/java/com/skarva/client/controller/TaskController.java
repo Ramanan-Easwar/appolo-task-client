@@ -5,9 +5,10 @@ import com.skarva.client.model.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 
 @Controller
@@ -59,7 +60,6 @@ public class TaskController {
     @GetMapping ("/task/submit/{id}")
     public String finishTask(@PathVariable Long id, Model model) {
         String res = taskServiceClient.completeTask(id);
-        System.out.println("res:"  + res);
         model.addAttribute("task", taskServiceClient.getTaskById(id));
         return "taskSingle";
     }
