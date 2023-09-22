@@ -13,7 +13,7 @@
     <tr th:each="task : ${tasks}">
         <td><span th:text="${task.taskName}"> Task name </span></td>
         <td><span th:text="${task.taskStatus}"> Task description </span></td>
-        <td><a th:href="@{/task/{id}(id=${task.getTaskId()})}" th:text="${task.type}"> Task status </a></td>
+        <td><a th:href="@{/task/{id}(id=${task.getTaskUUID()})}" th:text="${task.type}"> Task status </a></td>
     </tr>
     </tbody>
 </table>

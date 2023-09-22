@@ -45,16 +45,16 @@ public class TaskServiceClient {
         return gson.fromJson(response.getBody(), new TypeToken<List<Task>>(){}.getType());
     }
 
-    public Task getTaskById(Long taskId) {
+    public Task getTaskById(String uuid) {
         ResponseEntity<String> response = restTemplate.getForEntity(
-                Constants.SERVICE_URL + port + Constants.TASK + "/" + taskId, String.class);
+                Constants.SERVICE_URL + port + Constants.TASK + "/" + uuid, String.class);
         return gson.fromJson(response.getBody(), Task.class);
     }
 
-    public String completeTask(Long taskId) {
+    public String completeTask(String uuid) {
         HttpEntity<String> request = new HttpEntity<>("empty");
         return restTemplate.patchForObject(
-                Constants.SERVICE_URL + port + Constants.TASK + "/" + taskId + Constants.FINISH_TASK,
+                Constants.SERVICE_URL + port + Constants.TASK + "/" + uuid + Constants.FINISH_TASK,
                 request, String.class);
     }
 

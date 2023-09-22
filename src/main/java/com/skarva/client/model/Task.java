@@ -18,6 +18,7 @@ public class Task {
     private String type;
     private Timestamp created;
     private Timestamp updated;
+    private String taskUUID;
 
     @Override
     public String toString() {
@@ -28,6 +29,7 @@ public class Task {
                 ", type='" + type + '\'' +
                 ", created=" + created +
                 ", updated=" + updated +
+                ", taskUUID='" + taskUUID + '\'' +
                 '}';
     }
 }

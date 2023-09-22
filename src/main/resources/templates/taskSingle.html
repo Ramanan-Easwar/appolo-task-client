@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Create task</h1>
-<form action="#" th:action="@{/task/submit/{id}(id=${task.getTaskId()})}" th:object="${task}" method="get">
+<form action="#" th:action="@{/task/submit/{id}(id=${task.getTaskUUID()})}" th:object="${task}" method="get">
     <p th:text="${task.taskName}"> Task name </p>
     <p th:text="${task.taskStatus}"> Task desc </p>
     <p th:text="${task.type}"> Task name </p>
