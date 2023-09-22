@@ -27,9 +27,9 @@ public class TaskController {
         return "task";
     }
 
-    @GetMapping("/task/{id}")
-    public String taskById(@PathVariable Long id, Model model) {
-        model.addAttribute("task", taskServiceClient.getTaskById(id));
+    @GetMapping("/task/{uuid}")//string
+    public String taskById(@PathVariable String uuid, Model model) {
+        model.addAttribute("task", taskServiceClient.getTaskById(uuid));
         return "taskSingle";
     }
 
@@ -57,10 +57,10 @@ public class TaskController {
         return "addSuccess";
     }
 
-    @GetMapping ("/task/submit/{id}")
-    public String finishTask(@PathVariable Long id, Model model) {
-        String res = taskServiceClient.completeTask(id);
-        model.addAttribute("task", taskServiceClient.getTaskById(id));
+    @GetMapping ("/task/submit/{uuid}")//string
+    public String finishTask(@PathVariable String uuid, Model model) {
+        String res = taskServiceClient.completeTask(uuid);
+        model.addAttribute("task", taskServiceClient.getTaskById(uuid));
         return "taskSingle";
     }
 
